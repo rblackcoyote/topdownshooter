@@ -8,6 +8,7 @@ public class BulletController : MonoBehaviour
     public float speed;
     public float lifeTime;
     public int damageToGive;
+    //testing
 
     // Start is called before the first frame update
     void Start()
