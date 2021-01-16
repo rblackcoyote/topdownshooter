@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody myRb;
     public float moveSpeed;
 
+    public EnemyHealthManager enemyHealthManager;
     public PlayerController thePlayer;
     public GameObject jerkyRack;
 
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour
     {
         myRb = GetComponent<Rigidbody>();
         thePlayer = FindObjectOfType<PlayerController>();
+        enemyHealthManager = GetComponent<EnemyHealthManager>();
     }
 
     private void FixedUpdate()
@@ -24,7 +26,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         transform.LookAt(jerkyRack.transform.position);
-        if(EnemyHealthManager.currentHealth < EnemyHealthManager.maxHealth)
+        if(enemyHealthManager.currentHealth < enemyHealthManager.maxHealth)
         {
             transform.LookAt(thePlayer.transform.position);
         }
